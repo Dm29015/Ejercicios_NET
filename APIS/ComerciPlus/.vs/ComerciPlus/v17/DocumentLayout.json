@@ -3,16 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\User\\Desktop\\Ejercicios_NET\\APIS\\ComerciPlus\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D721D32C-E1A2-4675-9C95-D0F52DA909AD}|ComerciPlus.csproj|c:\\users\\user\\desktop\\ejercicios_net\\apis\\comerciplus\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D721D32C-E1A2-4675-9C95-D0F52DA909AD}|ComerciPlus.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D721D32C-E1A2-4675-9C95-D0F52DA909AD}|ComerciPlus.csproj|c:\\users\\user\\desktop\\ejercicios_net\\apis\\comerciplus\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D721D32C-E1A2-4675-9C95-D0F52DA909AD}|ComerciPlus.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D721D32C-E1A2-4675-9C95-D0F52DA909AD}|ComerciPlus.csproj|c:\\users\\user\\desktop\\ejercicios_net\\apis\\comerciplus\\models\\clientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D721D32C-E1A2-4675-9C95-D0F52DA909AD}|ComerciPlus.csproj|solutionrelative:models\\clientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D721D32C-E1A2-4675-9C95-D0F52DA909AD}|ComerciPlus.csproj|c:\\users\\user\\desktop\\ejercicios_net\\apis\\comerciplus\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D721D32C-E1A2-4675-9C95-D0F52DA909AD}|ComerciPlus.csproj|solutionrelative:data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +14,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,40 +34,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Ejercicios_NET\\APIS\\ComerciPlus\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Ejercicios_NET\\APIS\\ComerciPlus\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "Controllers\\AuthController.cs",
-              "ViewState": "AQIAADkAAAAAAAAAAAAQwD0AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T12:29:22.541Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Ejercicios_NET\\APIS\\ComerciPlus\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Ejercicios_NET\\APIS\\ComerciPlus\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAACQAAAAAAAAAAAAAADAAAAAoAAAA",
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Ejercicios_NET\\APIS\\ComerciPlus\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Ejercicios_NET\\APIS\\ComerciPlus\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "Data\\ApplicationDbContext.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAQwAsAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T15:52:41.788Z",
+              "WhenOpened": "2024-06-06T11:52:15.793Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "clientes.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Ejercicios_NET\\APIS\\ComerciPlus\\Models\\clientes.cs",
-              "RelativeDocumentMoniker": "Models\\clientes.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Ejercicios_NET\\APIS\\ComerciPlus\\Models\\clientes.cs",
-              "RelativeToolTip": "Models\\clientes.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAQwBcAAAAnAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T15:20:39.624Z"
             }
           ]
         }
