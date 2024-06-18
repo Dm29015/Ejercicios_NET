@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("API MVC")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+71b40a133bcc5ff3b026bdb5782ace919bfa5a42")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+84d4fea99b98cfdd78ea9d9c264732301e4a17fe")]
 [assembly: System.Reflection.AssemblyProductAttribute("API MVC")]
 [assembly: System.Reflection.AssemblyTitleAttribute("API MVC")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

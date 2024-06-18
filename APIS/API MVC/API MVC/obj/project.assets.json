@@ -6378,19 +6378,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\User\\.nuget\\packages\\": {}
+    "C:\\Users\\deisy\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Desktop\\Ejercicios_NET\\APIS\\API MVC\\API MVC\\API MVC.csproj",
+      "projectUniqueName": "C:\\Users\\deisy\\OneDrive\\Escritorio\\Ejercicios_NET\\APIS\\API MVC\\API MVC\\API MVC.csproj",
       "projectName": "API MVC",
-      "projectPath": "C:\\Users\\User\\Desktop\\Ejercicios_NET\\APIS\\API MVC\\API MVC\\API MVC.csproj",
-      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Desktop\\Ejercicios_NET\\APIS\\API MVC\\API MVC\\obj\\",
+      "projectPath": "C:\\Users\\deisy\\OneDrive\\Escritorio\\Ejercicios_NET\\APIS\\API MVC\\API MVC\\API MVC.csproj",
+      "packagesPath": "C:\\Users\\deisy\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\deisy\\OneDrive\\Escritorio\\Ejercicios_NET\\APIS\\API MVC\\API MVC\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\deisy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6460,7 +6465,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200-preview.23624.5/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

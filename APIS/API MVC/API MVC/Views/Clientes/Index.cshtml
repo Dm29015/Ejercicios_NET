@@ -13,22 +13,22 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.CedulaCliente)
+                CÉDULA
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.NombreCliente)
+                NOMBRE
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ApellidoCliente)
+                APELLIDO
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DireccionCliente)
+                DIRECCCIÓN
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.TelefonoCliente)
+                TELÉFONO
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.EstadoCliente)
+                ESTADO
             </th>
             <th></th>
         </tr>
@@ -52,7 +52,14 @@
                 @Html.DisplayFor(modelItem => item.TelefonoCliente)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.EstadoCliente)
+                @if (item.EstadoCliente)
+                {
+                    <text>Activo</text>
+                }
+                else
+                {
+                    <text>Inactivo</text>
+                }
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
