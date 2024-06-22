@@ -17,16 +17,16 @@ namespace ComerciPlus.Controllers
 
         // GET: api/creditos
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<creditos>>> GetCreditos()
+        public async Task<ActionResult<IEnumerable<Credito>>> GetCreditos()
         {
-            return await _context.creditos.ToListAsync();
+            return await _context.Credito.ToListAsync();
         }
 
         // GET: api/creditos/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<creditos>> GetCredito(int id)
+        public async Task<ActionResult<Credito>> GetCredito(int id)
         {
-            var credito = await _context.creditos.FindAsync(id);
+            var credito = await _context.Credito.FindAsync(id);
 
             if (credito == null)
             {
@@ -38,9 +38,9 @@ namespace ComerciPlus.Controllers
 
         // POST: api/credito
         [HttpPost]
-        public async Task<ActionResult<creditos>> PostCreditos(creditos credito)
+        public async Task<ActionResult<Credito>> PostCreditos(Credito credito)
         {
-            _context.creditos.Add(credito);
+            _context.Credito.Add(credito);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction(nameof(GetCredito), new { id = credito.Id }, credito);
@@ -49,7 +49,7 @@ namespace ComerciPlus.Controllers
 
         // PUT: api/creditos/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> Putcredito(int id, creditos credito)
+        public async Task<IActionResult> Putcredito(int id, Credito credito)
         {
             if (id != credito.Id)
             {
@@ -81,13 +81,13 @@ namespace ComerciPlus.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCredito(int id)
         {
-            var credito = await _context.creditos.FindAsync(id);
+            var credito = await _context.Credito.FindAsync(id);
             if (credito == null)
             {
                 return NotFound();
             }
 
-            _context.creditos.Remove(credito);
+            _context.Credito.Remove(credito);
             await _context.SaveChangesAsync();
 
             return NoContent();
@@ -95,7 +95,7 @@ namespace ComerciPlus.Controllers
 
         private bool CreditoExists(int id)
         {
-            return _context.creditos.Any(e => e.Id == id);
+            return _context.Credito.Any(e => e.Id == id);
         }
     }
 }

@@ -17,16 +17,16 @@ namespace ComerciPlus.Controllers
 
         // GET: api/clientes
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<clientes>>> GetClientes()
+        public async Task<ActionResult<IEnumerable<Cliente>>> GetClientes()
         {
-            return await _context.clientes.ToListAsync();
+            return await _context.Cliente.ToListAsync();
         }
 
         // GET: api/clientes/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<clientes>> GetCliente(int id)
+        public async Task<ActionResult<Cliente>> GetCliente(int id)
         {
-            var cliente = await _context.clientes.FindAsync(id);
+            var cliente = await _context.Cliente.FindAsync(id);
 
             if (cliente == null)
             {
@@ -38,9 +38,9 @@ namespace ComerciPlus.Controllers
 
         // POST: api/cliente
         [HttpPost]
-        public async Task<ActionResult<clientes>> PostClientes(clientes cliente)
+        public async Task<ActionResult<Cliente>> PostClientes(Cliente cliente)
         {
-            _context.clientes.Add(cliente);
+            _context.Cliente.Add(cliente);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction(nameof(GetCliente), new { Id = cliente.Id }, cliente);
@@ -49,7 +49,7 @@ namespace ComerciPlus.Controllers
 
         // PUT: api/clientes/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutCliente(int id, clientes cliente)
+        public async Task<IActionResult> PutCliente(int id, Cliente cliente)
         {
             if (id != cliente.Id)
             {
@@ -81,13 +81,13 @@ namespace ComerciPlus.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCliente(int id)
         {
-            var cliente = await _context.clientes.FindAsync(id);
+            var cliente = await _context.Cliente.FindAsync(id);
             if (cliente == null)
             {
                 return NotFound();
             }
 
-            _context.clientes.Remove(cliente);
+            _context.Cliente.Remove(cliente);
             await _context.SaveChangesAsync();
 
             return NoContent();
@@ -95,7 +95,7 @@ namespace ComerciPlus.Controllers
 
         private bool ClienteExists(int id)
         {
-            return _context.clientes.Any(e => e.Id == id);
+            return _context.Cliente.Any(e => e.Id == id);
         }
     }
 }

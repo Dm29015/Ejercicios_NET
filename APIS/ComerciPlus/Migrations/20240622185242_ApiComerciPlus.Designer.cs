@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ComerciPlus.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240528120350_UpdateClientes")]
-    partial class UpdateClientes
+    [Migration("20240622185242_ApiComerciPlus")]
+    partial class ApiComerciPlus
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -21,7 +21,7 @@ namespace ComerciPlus.Migrations
                 .HasAnnotation("ProductVersion", "8.0.5")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
-            modelBuilder.Entity("ComerciPlus.Models.clientes", b =>
+            modelBuilder.Entity("ComerciPlus.Models.Cliente", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -34,7 +34,7 @@ namespace ComerciPlus.Migrations
 
                     b.Property<string>("CedulaCliente")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasColumnType("varchar(255)");
 
                     b.Property<string>("DireccionCliente")
                         .IsRequired()
@@ -56,10 +56,13 @@ namespace ComerciPlus.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("clientes");
+                    b.HasIndex("CedulaCliente")
+                        .IsUnique();
+
+                    b.ToTable("Cliente");
                 });
 
-            modelBuilder.Entity("ComerciPlus.Models.creditos", b =>
+            modelBuilder.Entity("ComerciPlus.Models.Credito", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -81,74 +84,74 @@ namespace ComerciPlus.Migrations
 
                     b.HasIndex("IdCliente");
 
-                    b.ToTable("creditos");
+                    b.ToTable("Credito");
                 });
 
-            modelBuilder.Entity("ComerciPlus.Models.proveedores", b =>
-                {
-                    b.Property<int>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<string>("direccionEmpresa")
-                        .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("varchar(200)");
-
-                    b.Property<string>("nit")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("nombreEmpresa")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("varchar(100)");
-
-                    b.Property<string>("nombreVendedor")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("varchar(100)");
-
-                    b.Property<string>("telefonoEmpresa")
-                        .IsRequired()
-                        .HasMaxLength(10)
-                        .HasColumnType("varchar(10)");
-
-                    b.HasKey("id");
-
-                    b.ToTable("proveedores");
-                });
-
-            modelBuilder.Entity("ComerciPlus.Models.usuarios", b =>
+            modelBuilder.Entity("ComerciPlus.Models.Proveedor", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<string>("Apellido")
+                    b.Property<string>("DireccionEmpresa")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("varchar(200)");
+
+                    b.Property<string>("Nit")
                         .IsRequired()
                         .HasColumnType("longtext");
 
+                    b.Property<string>("NombreEmpresa")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<string>("NombreVendedor")
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<string>("TelefonoEmpresa")
+                        .IsRequired()
+                        .HasMaxLength(10)
+                        .HasColumnType("varchar(10)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Proveedor");
+                });
+
+            modelBuilder.Entity("ComerciPlus.Models.Usuario", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
                     b.Property<string>("Clave")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar(100)");
 
                     b.Property<string>("Correo")
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<string>("Nombre")
+                    b.Property<string>("NombreCompleto")
                         .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<string>("Telefono")
                         .HasColumnType("longtext");
 
                     b.HasKey("Id");
 
-                    b.ToTable("usuarios");
+                    b.ToTable("Usuario");
                 });
 
-            modelBuilder.Entity("ComerciPlus.Models.creditos", b =>
+            modelBuilder.Entity("ComerciPlus.Models.Credito", b =>
                 {
-                    b.HasOne("ComerciPlus.Models.clientes", "Cliente")
+                    b.HasOne("ComerciPlus.Models.Cliente", "Cliente")
                         .WithMany()
                         .HasForeignKey("IdCliente")
                         .OnDelete(DeleteBehavior.Cascade)

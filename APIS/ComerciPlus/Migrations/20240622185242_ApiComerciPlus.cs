@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace ComerciPlus.Migrations
 {
     /// <inheritdoc />
-    public partial class API : Migration
+    public partial class ApiComerciPlus : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -15,73 +15,75 @@ namespace ComerciPlus.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "clientes",
+                name: "Cliente",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    CedulaCliente = table.Column<string>(type: "longtext", nullable: false)
+                    CedulaCliente = table.Column<string>(type: "varchar(255)", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    NombreCliente = table.Column<string>(type: "longtext", nullable: false)
+                    NombreCliente = table.Column<string>(type: "varchar(30)", maxLength: 30, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    ApellidoCliente = table.Column<string>(type: "longtext", nullable: false)
+                    ApellidoCliente = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    DireccionCliente = table.Column<string>(type: "longtext", nullable: false)
+                    DireccionCliente = table.Column<string>(type: "varchar(200)", maxLength: 200, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    TelefonoCliente = table.Column<int>(type: "int", nullable: false),
+                    TelefonoCliente = table.Column<string>(type: "varchar(10)", maxLength: 10, nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
                     EstadoCliente = table.Column<bool>(type: "tinyint(1)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_clientes", x => x.Id);
+                    table.PrimaryKey("PK_Cliente", x => x.Id);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "proveedores",
-                columns: table => new
-                {
-                    id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    nit = table.Column<int>(type: "int", nullable: false),
-                    nombreEmpresa = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    direccion = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    telefono = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    nombreVendedor = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4")
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_proveedores", x => x.id);
-                })
-                .Annotation("MySql:CharSet", "utf8mb4");
-
-            migrationBuilder.CreateTable(
-                name: "usuarios",
+                name: "Proveedor",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Nombre = table.Column<string>(type: "longtext", nullable: false)
+                    Nit = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Apellido = table.Column<string>(type: "longtext", nullable: false)
+                    NombreEmpresa = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Correo = table.Column<string>(type: "longtext", nullable: false)
+                    DireccionEmpresa = table.Column<string>(type: "varchar(200)", maxLength: 200, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Clave = table.Column<string>(type: "longtext", nullable: false)
+                    TelefonoEmpresa = table.Column<string>(type: "varchar(10)", maxLength: 10, nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    NombreVendedor = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_usuarios", x => x.Id);
+                    table.PrimaryKey("PK_Proveedor", x => x.Id);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "creditos",
+                name: "Usuario",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    NombreCompleto = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Correo = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Clave = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Telefono = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4")
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Usuario", x => x.Id);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
+                name: "Credito",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -93,19 +95,25 @@ namespace ComerciPlus.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_creditos", x => x.Id);
+                    table.PrimaryKey("PK_Credito", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_creditos_clientes_IdCliente",
+                        name: "FK_Credito_Cliente_IdCliente",
                         column: x => x.IdCliente,
-                        principalTable: "clientes",
+                        principalTable: "Cliente",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateIndex(
-                name: "IX_creditos_IdCliente",
-                table: "creditos",
+                name: "IX_Cliente_CedulaCliente",
+                table: "Cliente",
+                column: "CedulaCliente",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Credito_IdCliente",
+                table: "Credito",
                 column: "IdCliente");
         }
 
@@ -113,16 +121,16 @@ namespace ComerciPlus.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "creditos");
+                name: "Credito");
 
             migrationBuilder.DropTable(
-                name: "proveedores");
+                name: "Proveedor");
 
             migrationBuilder.DropTable(
-                name: "usuarios");
+                name: "Usuario");
 
             migrationBuilder.DropTable(
-                name: "clientes");
+                name: "Cliente");
         }
     }
 }

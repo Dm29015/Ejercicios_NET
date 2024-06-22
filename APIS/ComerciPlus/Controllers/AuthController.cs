@@ -19,23 +19,53 @@ namespace ComerciPlus.Controllers
 
         [HttpPost]
         [Route("login")]
-        public IActionResult Login([FromBody] usuarios model)
+        public IActionResult Login([FromBody] UserLogin model)
         {
             // Aquí deberías validar las credenciales del usuario
             // Si las credenciales son válidas, genera y retorna un token JWT
-            if (model.Correo == "admin" && model.Clave == "admin123")
+            if (model.Username == "admin" && model.Password == "1234")
             {
                 var tokenString = GenerateJWTToken();
                 return Ok(new { token = tokenString });
-
             }
             else
             {
-                //var tokenString = GenerateJWTToken();
-                //return Ok(new { token = tokenString });
-                return Unauthorized(new { message = "Correo o contraseña incorrecta" });
+                return Unauthorized(new { message = "Usuario y/o claves incorrectos" });
             }
         }
+
+        [HttpPost]
+        [Route("validate-token")]
+        public IActionResult ValidateToken([FromBody] TokenValidationRequest request)
+        {
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var key = Encoding.UTF8.GetBytes(_config["Jwt:Key"]);
+
+            try
+            {
+                tokenHandler.ValidateToken(request.Token, new TokenValidationParameters
+                {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateLifetime = true, // Verifica si el token está vigente
+                    ValidateIssuerSigningKey = true,
+                    ValidIssuer = _config["Jwt:Issuer"],
+                    ValidAudience = _config["Jwt:Issuer"],
+                    IssuerSigningKey = new SymmetricSecurityKey(key)
+                }, out SecurityToken validatedToken);
+
+                return Ok(new { message = "Token is valid" });
+            }
+            catch (SecurityTokenExpiredException)
+            {
+                return Unauthorized(new { message = "Token has expired" });
+            }
+            catch
+            {
+                return Unauthorized(new { message = "Invalid token" });
+            }
+        }
+
 
         private string GenerateJWTToken()
         {
@@ -46,18 +76,25 @@ namespace ComerciPlus.Controllers
                 _config["Jwt:Issuer"],
                 _config["Jwt:Issuer"],
                 null,
-                expires: DateTime.Now.AddSeconds(120),
+                expires: DateTime.Now.AddSeconds(30),
                 signingCredentials: credentials);
 
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
 
-        [Authorize]
-        [HttpGet("checkloginstatus")]
-        public IActionResult CheckLoginStatus()
+        public class UserLogin
         {
-            return Ok(new { message = "Usuario autenticado" });
+            [Required]
+            public required string Username { get; set; }
+
+            [Required]
+            public required string Password { get; set; }
+        }
+
+        public class TokenValidationRequest
+        {
+            [Required]
+            public required string Token { get; set; }
         }
     }
-
 }
