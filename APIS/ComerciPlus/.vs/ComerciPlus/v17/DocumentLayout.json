@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\deisy\\OneDrive\\Escritorio\\Ejercicios_NET\\APIS\\ComerciPlus\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{D721D32C-E1A2-4675-9C95-D0F52DA909AD}|ComerciPlus.csproj|c:\\users\\deisy\\onedrive\\escritorio\\ejercicios_net\\apis\\comerciplus\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D721D32C-E1A2-4675-9C95-D0F52DA909AD}|ComerciPlus.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{D721D32C-E1A2-4675-9C95-D0F52DA909AD}|ComerciPlus.csproj|c:\\users\\deisy\\onedrive\\escritorio\\ejercicios_net\\apis\\comerciplus\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D721D32C-E1A2-4675-9C95-D0F52DA909AD}|ComerciPlus.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -19,6 +23,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\deisy\\OneDrive\\Escritorio\\Ejercicios_NET\\APIS\\ComerciPlus\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\deisy\\OneDrive\\Escritorio\\Ejercicios_NET\\APIS\\ComerciPlus\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAADUAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-22T22:53:01.721Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "AuthController.cs",
               "DocumentMoniker": "C:\\Users\\deisy\\OneDrive\\Escritorio\\Ejercicios_NET\\APIS\\ComerciPlus\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "Controllers\\AuthController.cs",

@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\deisy\\OneDrive\\Escritorio\\Ejercicios_NET\\APIS\\TallerDD\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{62380D8C-4576-4086-8F1A-9437D1B9B594}|TallerDD\\TallerDD.csproj|c:\\users\\deisy\\onedrive\\escritorio\\ejercicios_net\\apis\\tallerdd\\tallerdd\\models\\export.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62380D8C-4576-4086-8F1A-9437D1B9B594}|TallerDD\\TallerDD.csproj|solutionrelative:tallerdd\\models\\export.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Export.cs",
+              "DocumentMoniker": "C:\\Users\\deisy\\OneDrive\\Escritorio\\Ejercicios_NET\\APIS\\TallerDD\\TallerDD\\Models\\Export.cs",
+              "RelativeDocumentMoniker": "TallerDD\\Models\\Export.cs",
+              "ToolTip": "C:\\Users\\deisy\\OneDrive\\Escritorio\\Ejercicios_NET\\APIS\\TallerDD\\TallerDD\\Models\\Export.cs",
+              "RelativeToolTip": "TallerDD\\Models\\Export.cs",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAAAA4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-23T20:09:49.868Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
